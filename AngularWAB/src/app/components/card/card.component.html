@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div *ngIf='isAdmin' class="text-center mt-3">
+        <button type="button" class="btn btn-primary text-center;" (click)="addPlan()">Create</button>
+    </div>
+    <br>
+
+    <ng-template #template>
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">{{formName}}</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body col-12" style="">
+            <div>
+                <formio #notificationForm [form]="formIo.form" [submission]="formIo.submission"
+                    [options]="formIoOptions" (submit)="submitForm($event)"></formio>
+            </div>
+        </div>
+    </ng-template>
+
+    <!-- #28bdeb -->
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6  col-xl-4" *ngFor="let plan of planInfo; let index=index">
+            <div class="card small " style="margin-top: 30px; height:450px; background-color: #03b5fc; ">
+                <div class="card-body">
+                    <!-- 03b5fc -->
+                    <div class="">
+                        <h2 class="card-title text-center mt-1" 
+                        style="font-size: 25px; color: white; margin-top: 10px;  height: 20px;">{{plan.planName}}</h2>
+                        <div style="padding-top: 0px;">
+                            <div class="">
+                                <h3 class="ml-2 text-center" style="font-size: 20px; margin-bottom: 20px; color:white ">
+                                    {{plan.websiteType}}</h3>
+                            </div>
+                        </div>
+
+                        <!-- #001c82 -->
+                        <div class="bar" style="padding-top: 0px; overflow: auto;">
+                            <div class="" *ngFor="let info of plan.info; let index=index">
+                                <h3 class="ml-2" style="font-size: 13px; color: white;"> - {{info.info}}</h3>
+                            </div>
+
+                        </div>
+                        <div class="" style="margin-top: 16px;">
+                            <h1 class="ml-2 mt-2 mb-2" style="font-size: 16px; color: white;">Note: {{plan.note}}</h1>
+                        </div>
+                        <!-- <a href="#" title="Button One" class="button one">Button One</a> -->
+                          
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" style="margin-top: 5px;">
+                <div *ngIf='isAdmin'  class="col-6 mt-3 mb-3 text-center">
+                    <a href="javascript:void(0)" (click)="editPlan(plan)" class="btn btn-primary"
+                        style="width: 90px;">
+                        Edit</a>
+                </div>
+                <div *ngIf='isAdmin' class="col-6 mt-3 mb-3 text-center">
+                    <a href="javascript:void(0)" (click)="deletePlan(plan)" class="btn btn-primary"
+                        style="width: 90px;">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" style="height: 80px;"></div>
+           
+</div>
+ <!-- sroll to top button -->
+ <!-- <div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
+    <i class="fa fa-arrow-circle-up" (click)="scrollToTop()" style="font-size: 40px;color:dodgerblue ;"
+        aria-hidden="true"></i>
+</div> -->

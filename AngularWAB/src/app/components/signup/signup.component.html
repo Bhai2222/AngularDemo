@@ -1,0 +1,26 @@
+<div class="">
+    <app-iso-info></app-iso-info>
+</div>
+<div class="">
+    <app-navbar></app-navbar>
+</div>
+<div class="container-fluid" >
+    <div class="row" style="height: 10px;"></div>
+
+    <div class="card card2" style="    background-color: white;  border-radius: 20px;">
+        <div class="card-body">
+
+            <div class="row" style="">
+                <div class="col-md-4 offset-md-4 mt-4" style="margin-bottom: 50px;">
+                    <formio #notificationForm [form]="formIo.form" [submission]="formIo.submission"
+                        [options]="formIoOptions" (submit)="submitForm($event)"></formio>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="height: 60px;"></div>
+
+</div>
+<div class="">
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,69 @@
+<!-- <div class="container-fluid">
+    <div class="row">
+        <h1 style="text-align: center;">Spring Boot + Angular 8 CRUD Example</h1>
+    </div>
+    <div class="row">
+        <form [formGroup]="myForm" (ngSubmit)="submitForm(myForm)">
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Plan Name</label>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Plan name"
+                        formControlName="planName">
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Website Type</label>
+                    <input type="text" class="form-control" id="inlineFormInput" placeholder="Website type"
+                        formControlName="websiteType">
+                </div>
+ 
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Info</label>
+                    <textarea class="form-control"  ng-model="myTextarea" style="white-space: pre-wrap;" id="exampleFormControlTextarea1" rows="3" 
+                    placeholder="Info" formControlName="info"></textarea>                    
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-2" [disabled]="!myForm.valid">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <ul class="list-unstyled">
+        <li>
+            <a routerLink="/card" class="textwhite" href="#!">Home</a>
+        </li>
+    </ul>
+
+    <div class="row border border-primary">
+        <div class="col-4  border border-primary" *ngFor="let student of usersList; let i=index">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{student.firstName}}</h5>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>{{student.planName}}</td>
+                                <td>{{student.websiteType}}</td>
+                                <td>{{student.info}}</td>
+                                <td>
+                                    <span style="margin-right: 10px"><button (click)="edit(student)"
+                                            class="btn btn-primary mb-2">Edit</button> </span>
+                                    <span><button (click)="delete(student)"
+                                            class="btn btn-primary mb-2">Delete</button></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

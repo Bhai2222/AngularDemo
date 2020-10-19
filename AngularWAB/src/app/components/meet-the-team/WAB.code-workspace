@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\BhoiVarVadhu"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\onlineshopping-react"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

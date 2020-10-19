@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\demoMAt"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\onlineshopping-react"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\springboot-angular8-ui"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

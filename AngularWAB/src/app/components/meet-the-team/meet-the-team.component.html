@@ -1,0 +1,133 @@
+<div class="">
+    <app-iso-info></app-iso-info>
+</div>
+<div class="">
+    <app-navbar></app-navbar>
+</div>
+
+<div class="container-fluid">
+    <div class="card" style="margin-top: 20px; background-color: white;  border-radius: 20px;">
+        <div class="card-body">
+    <div *ngIf='isAdmin' class="text-center mt-3">
+        <button type="button" class="btn btn-primary text-center;" (click)="addTeamMembers()">Create</button>
+    </div>
+    <br>
+
+    <ng-template #template>
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">{{formName}}</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body col-12" style="">
+            <div>
+                <formio #notificationForm [form]="formIo.form" [submission]="formIo.submission"
+                    [options]="formIoOptions">
+                </formio>
+                <label class="btn btn-default">
+                    <input type="file" (change)="selectFile($event)" />
+                </label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary">close</button>
+            <button type="button" class="btn btn-secondary"  (click)="upload()"
+            data-dismiss="modal">Submit</button>
+          </div>
+          <!-- [disabled]="!submissionData" -->
+    </ng-template>
+
+    <h1 class="text-center" style="margin-top: 20px;">Meet The Team</h1>
+    
+    <div class="row " style=" ">
+
+        <div class="col-xl-1 col-12  "></div>
+        <div class="col-xl-10">
+            <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6  col-xl-3 " *ngFor="let member of memberInfo; let index=index">
+            <div class="card cardshadow small" style="margin-top: 50px; background-color: #6b686bfa; height: 500px; border-radius: 11px;">
+                <div class="card-body ">
+                    <div class="">
+                         <div style="padding-top: 0px;">
+                            
+                            <div class="">
+                                <img class="card-img-top" [src]="sanitizeImageUrl(member.code)" alt="Card image cap"
+                                    style="height:300px">
+                            </div>
+                        </div>
+
+                        <!-- #001c82 -->
+                        <div class="" style="padding-top: 0px;">
+                            <div class="mt-4" >
+                                <h3 class="ml-2 text-center" style="font-size: 25px; color: white;"> {{member.member_name}}</h3>
+                            </div>
+
+                        </div>
+                        <div class="" style="margin-top: 16px;">
+                            <h1 class="ml-2 mt-2 mb-2 text-center" style="font-size: 20px; color: white;">{{member.profile_name}}</h1>
+                        </div>
+                        <div class="row" style="">
+                            <div *ngIf='isAdmin'  class="col-6  mb-3 text-center">
+                                <a href="javascript:void(0)" (click)="editTeamMembers(member)" class="btn btn-primary"
+                                    style="width: 90px;">
+                                    Edit</a>
+                            </div>
+                            <div *ngIf='isAdmin' class="col-6   mb-3 text-center">
+                                <a href="javascript:void(0)" (click)="deleteTeamMembers(member)" class="btn btn-primary"
+                                    style="width: 90px;">Delete</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+        <div class="col-xl-1  "></div>
+    </div>
+ 
+    <!-- <div class="row border border-primary">
+        <div class="col-12 border border-primary" *ngFor="let member of memberInfo; let index=index">
+            <div class="card" style="margin-top: 50px;  ">
+
+                <div class="card-body ">
+                    <div class="border border-primary">
+                        <div class="row">
+                            <div class="col-6 border border-danger ">
+                                <img class="card-img-top" [src]="sanitizeImageUrl(member.code)" alt="Card image cap"
+                                    style="height:300px">
+                            </div>
+                            <div class="col-6 border border-primary">
+                                <h2 class="card-title text-center" style="font-size: 30px;">{{member.member_name}}</h2>
+
+                                <h3 class="ml-2 text-center" style="font-size: 25px;">{{member.profile_name}}</h3>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mt-3 mb-3 text-center">
+                                <a href="javascript:void(0)" (click)="editTeamMembers(member)"
+                                    class="btn btn-primary">Edit</a>
+                            </div>
+                            <div class="col-6 mt-3 mb-3 text-center">
+                                <a href="javascript:void(0)" (click)="deleteTeamMembers(member)"
+                                    class="btn btn-primary">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+        </div></div>
+
+        <div class="row" style="height: 80px;"></div>
+
+    </div>
+
+<div class="">
+    <app-footer></app-footer>
+</div>

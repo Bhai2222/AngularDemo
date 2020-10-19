@@ -1,0 +1,128 @@
+<div class="">
+    <app-iso-info></app-iso-info>
+</div>
+<div class="">
+    <app-navbar></app-navbar>
+</div>
+
+<div class="container-fluid ">
+    <div class="card" style="margin-top: 10px; border-radius: 20px; ">
+
+        <div class="card-body">
+
+    <h1 class="text-center" style="">Client Products</h1>
+        </div></div>
+
+
+    <!-- <div class="row" style="height: 50px;"></div> -->
+    <div class="card mt-2" style="background-color: white;  border-radius: 20px;">
+        <div class="card-body">
+    <div *ngIf='isAdmin' class="text-center mt-3">
+        <button type="button" class="btn btn-primary text-center;" (click)="addClientProducts()">Create</button>
+    </div>
+    <br>
+
+    <ng-template #template>
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">{{formName}}</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body col-12" style="">
+            <div>
+                <formio #notificationForm [form]="formIo.form" [submission]="formIo.submission"
+                    [options]="formIoOptions">
+                </formio>
+                <label class="btn btn-default">
+                    <input type="file" (change)="selectFile($event)" />
+                </label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="modalRef.hide()">close</button>
+            <button type="button" class="btn btn-secondary"  (click)="upload()" (click)="modalRef.hide()"
+            data-dismiss="modal">Submit</button>
+          </div>
+          <!-- [disabled]="!submissionData" -->
+    </ng-template>
+
+    <div class="row" *ngFor="let plan of productInfo; let index=index">
+
+        <div class="col-xl-1 "></div>
+        <div class="col-xl-10 " >
+            <div class="card cardshadow" style="margin-top: 50px; background-color: #6b686bfa; border-radius: 20px; ">
+
+                <div class="card-body">
+
+                    <div class="">
+                        <div class="row ">
+                            <div class="col-12 col-xl-6 col-sm-12  ">
+                                <img class="card-img-top" [src]="sanitizeImageUrl(plan.code)" alt="Card image cap"
+                                    style="height:250px">
+                            </div>
+                            <div class="col-12 col-xl-6 col-sm-12 ">
+                                <h2 class="card-title text-center mt-3" style="font-size: 20px; text-transform: uppercase; color:white;">
+                                    {{plan.client_product_name}}</h2>
+                                <h2 class="card-title ml-2" style="font-size: 18px;color:  white;">Project: {{plan.client_project_name}}</h2>
+                                <h3 class="ml-2 " style="font-size: 18px; color: white; font-family: 'Prompt', sans-serif;
+
+
+                                 
+                                ">{{plan.client_product_info}}</h3>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div *ngIf='isAdmin' class="col-6 mt-3 mb-3 text-center">
+                                <a href="javascript:void(0)" (click)="editClientProducts(plan)"
+                                    class="btn btn-outline-primary" style="color: white; ">Edit</a>
+                            </div>
+                            <div *ngIf='isAdmin' class="col-6 mt-3 mb-3 text-center">
+                                <a href="javascript:void(0)" (click)="deleteClientProducts(plan)"
+                                    class="btn btn-outline-primary" style="color: white;">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-1 "></div>
+    </div>
+
+    <div *ngIf="pagination.total > 1" class="row mt-4">
+        <div class="col-md-4 offset-md-4">
+            <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+                <ul class="pagination">
+                  <li class="page-item" [ngClass]= "pagination.page === 1 ? 'disabled' : ''">
+                    <a class="page-link" href="javascript:void(0)" (click)="setPreviousAndNextPage('Previous')"
+                    aria-label="Previous" click>
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <div *ngFor="let page of counter(pagination.total); let index=index">
+                      <li class="page-item" [ngClass]= "page === 1 ? 'active' : ''" id="{{getId(page)}}"><a class="page-link" href="javascript:void(0)" (click)="changePage(page)">{{page}}</a></li>
+                  </div>
+                  <li class="page-item" [ngClass]= "pagination.page === pagination.total ? 'disabled' : ''">
+                    <a class="page-link" href="javascript:void(0)" (click)="setPreviousAndNextPage('Next')"
+                    aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+    </div>
+ 
+
+</div></div>
+    <div class="row " style="height: 80px;"></div>
+
+</div>
+
+
+<div class="">
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,105 @@
+<!-- <div class="">
+  <app-iso-info></app-iso-info>
+</div>
+<div class="">
+  <app-navbar></app-navbar>
+</div>
+
+<div class="container-fluid border border-primary">
+  <div class="text-center mt-3">
+    <button type="button" class="btn btn-primary text-center;" (click)="addOurProducts()">Create</button>
+  </div>
+  <br>
+
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">{{formName}}</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body col-12" style="">
+      <div>
+        <formio #notificationForm [form]="formIo.form" [submission]="formIo.submission" [options]="formIoOptions"
+          (change)="onSignUpFormChange($event)" (render)="onFormLoad(notificationForm)" (submit)="submitForm($event)">
+        </formio>
+      </div>
+    </div>
+  </ng-template>
+
+  <div class="row border border-primary">
+    <div class="col-12 border border-primary" *ngFor="let plan of productInfo; let index=index">
+      <div class="card" style="margin-top: 50px;  ">
+
+        <div class="card-body ">
+          <div class="border border-primary">
+            <div class="row">
+              <div class="col-6 border border-primary ">
+                <img class="card-img-top" [src]="sanitizeImageUrl(plan.code)" alt="Card image cap" style="height:300px">
+              </div>
+              <div class="col-6 border border-primary">
+                <h2 class="card-title text-center" style="font-size: 30px;">{{plan.product_name}}</h2>
+
+                <h3 class="ml-2 text-center" style="font-size: 25px;">{{plan.product_info}}</h3>
+                
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 mt-3 mb-3 text-center">
+                <a href="javascript:void(0)" (click)="editOurProducts(plan)" class="btn btn-primary">Edit</a>
+              </div>
+              <div class="col-6 mt-3 mb-3 text-center">
+                <a href="javascript:void(0)" (click)="deleteOurProducts(plan)" class="btn btn-primary">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+ <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Lassunch demo modal
+</button>
+
+ <div #ourProducts class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" (change)="selectFile($event)" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" (change)="selectFile($event)" class="form-control">
+            </div>
+            <label class="btn btn-default">
+              <input type="file" (change)="selectFile($event)" />
+            </label>
+          </form>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">close</button>
+        <button type="button" class="btn btn-secondary" [disabled]="!submissionData" (click)="upload(ourProducts)"
+        data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="">
+  <app-footer></app-footer>
+</div> -->

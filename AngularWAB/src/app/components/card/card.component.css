@@ -1,0 +1,164 @@
+.card {
+	box-shadow: 0 4px 8px 0 #fa6c5c;
+	transition: 0.3s;
+  }
+
+  /* #b09492 */
+  .card:hover {
+	box-shadow: 0 18px 16px 0px #b09492;
+  }
+
+  .bar{
+	max-height:200px; scrollbar-width: thin;
+  }
+
+  * {
+	scrollbar-width: thin;
+	scrollbar-color: #93d2f7 #9cedf8;
+  }
+  *::-webkit-scrollbar {
+	width: 6px;
+  }
+  *::-webkit-scrollbar-track {
+	background: #bddeee;
+  }
+  *::-webkit-scrollbar-thumb {
+	background-color: #43a0ec;
+	border-radius: 20px;
+	border: 3px solid #57abfa;
+  }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+		  .small{
+
+			height: 1000px;
+		  }	
+	
+	
+	 }
+
+	 @media (max-width: 575.98px) { 
+		
+		.small{
+			height: 1000px;
+		}
+
+	  }
+
+
+
+
+
+	  /* .button {
+		display: block;
+		position: relative;
+ 		padding: 10px 0;
+ 		color: #fff; 
+		border: none;
+	  }
+	  .button.one:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 100%;
+		background-color: rgba(255,255,255,0.4);
+		  -webkit-transition: none;
+			 -moz-transition: none;
+				  transition: none;
+	  }
+	  .button.one:hover:after {
+		width: 120%;
+		background-color: rgba(255,255,255,0);
+		
+		  -webkit-transition: all 0.9s ease-in-out;
+			 -moz-transition: all 0.4s ease-in-out;
+				  transition: all 0.4s ease-in-out;
+	  } */
+
+
+	  /**
+ * Icon
+ */
+
+/* .icon1{
+	max-height:250px; 
+} */
+
+/* .icon {
+	position: relative;
+	overflow: hidden; */
+	/* width: 450px;
+	height: 450px;
+	display: inline-block; */
+	
+	/* margin: 10px 0 10px 8px; */
+	/* border-radius: 5px;
+	color: #fff;
+	text-decoration: none; */
+	/* text-align: center; */
+	/* line-height: 50px;
+	font-size: 12px;
+	font-family: sans-serif; */
+  /* } */
+  
+   
+  /**
+   * The "shine" element
+   */
+  
+  /* .icon:after {
+	
+	animation: shine 5s ease-in-out  infinite;
+	animation-fill-mode: forwards;  
+	content: "";
+	position: absolute;
+	top: -110%;
+	left: -210%;
+	width: 200%;
+	height: 200%;
+	opacity: 0;
+	transform: rotate(30deg);
+	
+	background: rgba(255, 255, 255, 0.13);
+
+	 background: linear-gradient(
+	  to right, 
+	  rgba(255, 255, 255, 0.13) 0%,
+	  rgba(255, 255, 255, 0.13) 77%,
+	  rgba(255, 255, 255, 0.5) 92%,
+	  rgba(255, 255, 255, 0.0) 100%
+	);
+   } */
+  
+  /* Hover state - trigger effect */
+  
+  
+  /* Active state */
+  
+  /* .icon:active:after {
+	opacity: 0;
+  }
+  
+  @keyframes shine{
+	10% {
+	  opacity: 1;
+	  top: -30%;
+	  left: -30%;
+	  transition-property: left, top, opacity;
+	  transition-duration: 0.9s, 0.9s, 0.15s;
+	  transition-timing-function: ease;
+	}
+	100% {
+	  opacity: 0;
+	  top: -30%;
+	  left: -30%;
+	  transition-property: left, top, opacity;
+	}
+  } */
+	  
+	   
+
+	  
